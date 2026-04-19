@@ -39,6 +39,13 @@ const projects = [
     github: "https://github.com/DeruDJ22/projectSMK/tree/main/Bootstrap",
     tech: ["HTML5", "CSS3", "Bootstrap"],
   },
+  {
+    title: "Helmet Detection System",
+    desc: "This project features a real-time safety helmet detection system, powered by a Next.js frontend and a FastAPI backend, utilizing the YOLOv8 model for high-accuracy object recognition.",
+    link: "#",
+    github: "https://github.com/DeruDJ22/CCI_Kelompok6",
+    tech: ["Next.js", "FastAPI", "YOLOv8"],
+  },
 ];
 
 const containerVariants = {
