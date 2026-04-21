@@ -84,7 +84,7 @@ export default function Projects() {
             DATA/PROJECTS
           </h2>
           <span className="text-[#ffb700] text-sm">]</span>
-          <div className="flex-1 h-px bg-gradient-to-r from-[#003d0f] to-transparent hidden sm:block" />
+          <div className="flex-1 h-px bg-linear-to-r from-[#003d0f] to-transparent hidden sm:block" />
         </div>
 
         <motion.div
@@ -100,11 +100,13 @@ export default function Projects() {
               variants={item}
               whileHover={{ y: -4, boxShadow: "0 0 24px rgba(0,255,65,0.25)" }}
               className={`bg-[#050f05] border flex flex-col h-full relative overflow-hidden transition-all duration-300 group ${
-                p.highlight ? "border-[#003d0f] hover:border-[#00ff41]/70" : "border-[#003d0f] hover:border-[#00ff41]/50"
+                p.highlight
+                  ? "border-[#003d0f] hover:border-[#00ff41]/70"
+                  : "border-[#003d0f] hover:border-[#00ff41]/50"
               }`}
             >
               {/* Top scan line */}
-              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00ff41]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#00ff41]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
               {/* Terminal titlebar */}
               <div className="flex items-center gap-1.5 px-3 py-2 bg-[#00ff41]/5 border-b border-[#003d0f]">
@@ -125,7 +127,8 @@ export default function Projects() {
               <div
                 className="absolute inset-x-0 bottom-0 top-8 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
                 style={{
-                  backgroundImage: "linear-gradient(rgba(0,255,65,0.04) 1px, transparent 1px)",
+                  backgroundImage:
+                    "linear-gradient(rgba(0,255,65,0.04) 1px, transparent 1px)",
                   backgroundSize: "100% 14px",
                 }}
               />
@@ -133,17 +136,28 @@ export default function Projects() {
               <div className="p-5 flex flex-col flex-1 z-10">
                 {/* Icon + links */}
                 <div className="flex justify-between items-center mb-5">
-                  <Folder size={32} className="text-[#00ff41] stroke-1 opacity-60 group-hover:opacity-100 transition-opacity" />
+                  <Folder
+                    size={32}
+                    className="text-[#00ff41] stroke-1 opacity-60 group-hover:opacity-100 transition-opacity"
+                  />
                   <div className="flex gap-4 items-center">
                     {p.github && (
-                      <a href={p.github} target="_blank" rel="noopener noreferrer"
-                        className="text-[#1a4d1a] hover:text-[#00ff41] transition-colors">
+                      <a
+                        href={p.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#1a4d1a] hover:text-[#00ff41] transition-colors"
+                      >
                         <Github size={18} />
                       </a>
                     )}
                     {p.link && (
-                      <a href={p.link} target="_blank" rel="noopener noreferrer"
-                        className="text-[#1a4d1a] hover:text-[#00ff41] transition-colors">
+                      <a
+                        href={p.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#1a4d1a] hover:text-[#00ff41] transition-colors"
+                      >
                         <ExternalLink size={18} />
                       </a>
                     )}

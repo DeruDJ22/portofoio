@@ -3,14 +3,14 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const SKILLS = [
-  { label: "HTML5_&&_CSS3",  level: 85, cat: "sys.frontend" },
+  { label: "HTML5_&&_CSS3", level: 85, cat: "sys.frontend" },
   { label: "JavaScript_ES6", level: 75, cat: "sys.frontend" },
-  { label: "React_NextJS",   level: 65, cat: "sys.frontend" },
-  { label: "Tailwind_CSS",   level: 80, cat: "sys.frontend" },
-  { label: "PHP_Laravel",    level: 70, cat: "sys.backend"  },
-  { label: "Java_OOP",       level: 60, cat: "sys.backend"  },
-  { label: "C++",            level: 45, cat: "sys.algorithm"},
-  { label: "Go_Lang",        level: 30, cat: "sys.backend"  },
+  { label: "React_NextJS", level: 65, cat: "sys.frontend" },
+  { label: "Tailwind_CSS", level: 80, cat: "sys.frontend" },
+  { label: "PHP_Laravel", level: 70, cat: "sys.backend" },
+  { label: "Java_OOP", level: 60, cat: "sys.backend" },
+  { label: "C++", level: 45, cat: "sys.algorithm" },
+  { label: "Go_Lang", level: 30, cat: "sys.backend" },
 ];
 
 function blocks(pct) {
@@ -79,7 +79,7 @@ export default function Skills() {
             SYS/SKILLS
           </h2>
           <span className="text-[#ffb700] text-sm">]</span>
-          <div className="flex-1 h-px bg-gradient-to-r from-[#003d0f] to-transparent hidden sm:block" />
+          <div className="flex-1 h-px bg-linear-to-r from-[#003d0f] to-transparent hidden sm:block" />
         </div>
 
         {/* nmap-style terminal header */}
@@ -88,13 +88,25 @@ export default function Skills() {
             <span className="w-2 h-2 bg-[#ff3b30]" />
             <span className="w-2 h-2 bg-[#ffb700]" />
             <span className="w-2 h-2 bg-[#00ff41]" />
-            <span className="ml-3 text-[10px] text-[#1a4d1a] tracking-widest uppercase">skill_scan.sh</span>
+            <span className="ml-3 text-[10px] text-[#1a4d1a] tracking-widest uppercase">
+              skill_scan.sh
+            </span>
           </div>
           <div className="px-5 py-4 text-sm space-y-1.5 text-[#1a4d1a]">
-            <div className="flex gap-3"><span className="text-[#ffb700]">❯</span><span>nmap -sV --skill-scan 192.168.deru.local</span></div>
-            <p className="pl-6 text-[#1a4d1a] italic">// Scanning target: Deru Khairan Djuharianto...</p>
-            <p className="pl-6"><span className="text-[#00ff41]">HOST IS UP</span> — 8 skill vectors detected. Latency: 0ms</p>
-            <p className="pl-6 text-[10px] tracking-widest">PORT &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STATE &nbsp;&nbsp; SERVICE</p>
+            <div className="flex gap-3">
+              <span className="text-[#ffb700]">❯</span>
+              <span>nmap -sV --skill-scan 192.168.deru.local</span>
+            </div>
+            <p className="pl-6 text-[#1a4d1a] italic">
+              // Scanning target: Deru Khairan Djuharianto...
+            </p>
+            <p className="pl-6">
+              <span className="text-[#00ff41]">HOST IS UP</span> — 8 skill
+              vectors detected. Latency: 0ms
+            </p>
+            <p className="pl-6 text-[10px] tracking-widest">
+              PORT &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STATE &nbsp;&nbsp; SERVICE
+            </p>
           </div>
         </div>
 

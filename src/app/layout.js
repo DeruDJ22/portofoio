@@ -1,5 +1,6 @@
 import { Share_Tech_Mono, Orbitron } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 const shareTechMono = Share_Tech_Mono({
   weight: "400",
@@ -15,15 +16,18 @@ const orbitron = Orbitron({
 
 export const metadata = {
   title: "Deru Khairan Djuharianto | Portfolio",
-  description:
-    "Full-Stack Developer & Security Enthusiast. Telkom University.",
+  description: "Full-Stack Developer & Security Enthusiast. Telkom University.",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${shareTechMono.variable} ${orbitron.variable}`}>
+    <html
+      lang="en"
+      className={`${shareTechMono.variable} ${orbitron.variable}`}
+    >
       <body className="font-mono bg-[#020d02] text-[#00ff41] antialiased">
         {children}
+        <Analytics />
       </body>
     </html>
   );
