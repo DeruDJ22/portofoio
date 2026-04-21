@@ -1,136 +1,206 @@
 "use client";
 import { motion } from "framer-motion";
 
+const INFO = [
+  { key: "> Birthday", val: "22-02-2005" },
+  { key: "> Logic_Gate", val: "Full-Stack" },
+  { key: "> Comm_Link", val: "+62 812-8184-4073" },
+  { key: "> Base_Node", val: "Depok, Indonesia" },
+  { key: "> Experience", val: "Junior Level" },
+  { key: "> Education", val: "Telkom University" },
+  { key: "> E-Mail", val: "derukhdj22@gmail.com" },
+  { key: "> Status", val: "Available_for_Projects", green: true },
+];
+
 export default function About() {
   return (
-    <section id="about" className="max-w-5xl mx-auto py-32 px-6">
+    <section id="about" className="max-w-6xl mx-auto py-32 px-6 font-mono">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
       >
-        <div className="flex items-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-200 flex items-center whitespace-nowrap">
-            <span className="text-emerald-400 font-mono mr-3 text-lg md:text-xl font-normal">
-              01.
-            </span>
-            About Me
+        {/* Section header */}
+        <div className="flex items-center gap-4 mb-16 pb-4 border-b border-[#003d0f]">
+          <span className="text-[#ffb700] text-sm tracking-widest">[ 01.</span>
+          <h2
+            className="text-xl md:text-2xl font-bold text-white uppercase tracking-widest"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            ROOT/ABOUT
           </h2>
-          <div className="ml-6 h-px bg-slate-700 grow max-w-sm hidden sm:block"></div>
+          <span className="text-[#ffb700] text-sm">]</span>
+          <div className="flex-1 h-px bg-linear-to-r from-[#003d0f] to-transparent hidden sm:block" />
         </div>
 
         <div className="grid md:grid-cols-5 gap-12 items-start">
-          <div className="md:col-span-3 text-slate-400 space-y-6 text-lg leading-relaxed shadow-sm">
-            <p>
-              Hello! My name is{" "}
-              <span className="text-emerald-400 font-medium">
-                Deru Khairan Djuharianto
-              </span>
-              . My journey in the world of software development began at{" "}
-              <span className="text-slate-200">SMK Citra Negara</span>, where I
-              majored in Software Engineering. It was there that I first
-              discovered the thrill of turning pure logic into functional,
-              interactive applications.
-            </p>
-            <p>
-              Fast-forward to today, and I am currently pursuing my degree at{" "}
-              <span className="text-slate-200">Telkom University</span>. Through
-              rigorous academics and hands-on extracurricular projects, I enjoy
-              the challenge of bridging{" "}
-              <span className="text-slate-200">
-                complex backend architectures
-              </span>{" "}
-              with{" "}
-              <span className="text-slate-200">intuitive frontend designs</span>
-              .
-            </p>
-            <p>
-              My main focus right now is mastering the{" "}
-              <span className="text-emerald-400">Laravel ecosystem</span> and
-              modern JavaScript frameworks like{" "}
-              <span className="text-emerald-400">Next.js</span>. I also possess
-              a strong interest in{" "}
-              <span className="text-emerald-400">cybersecurity</span>,
-              meticulously testing and hardening applications against modern
-              threats like SQL injections.
-            </p>
-
-            {/* Personal Details */}
-            <div className="pt-6 mt-8 border-t border-slate-700/50">
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 text-base">
-                <li className="flex items-start">
-                  <strong className="text-emerald-400 font-mono min-w-22.5">
-                    &gt; Birthday:
-                  </strong>
-                  <span className="text-slate-200">22 Februari 2005</span>
-                </li>
-                <li className="flex items-start">
-                  <strong className="text-emerald-400 font-mono min-w-22.5">
-                    &gt; Website:
-                  </strong>
-                  <span className="text-slate-200">-</span>
-                </li>
-                <li className="flex items-start">
-                  <strong className="text-emerald-400 font-mono min-w-22.5">
-                    &gt; Phone:
-                  </strong>
-                  <span className="text-slate-200">+62 812-8184-4073</span>
-                </li>
-                <li className="flex items-start">
-                  <strong className="text-emerald-400 font-mono min-w-22.5">
-                    &gt; City:
-                  </strong>
-                  <span className="text-slate-200">Depok, Indonesia</span>
-                </li>
-                <li className="flex items-start">
-                  <strong className="text-emerald-400 font-mono min-w-22.5">
-                    &gt; Age:
-                  </strong>
-                  <span className="text-slate-200">19</span>
-                </li>
-                <li className="flex items-start">
-                  <strong className="text-emerald-400 font-mono min-w-22.5">
-                    &gt; Degree:
-                  </strong>
-                  <span className="text-slate-200">-</span>
-                </li>
-                <li className="flex items-start">
-                  <strong className="text-emerald-400 font-mono min-w-22.5">
-                    &gt; Email:
-                  </strong>
-                  <span className="text-slate-200 break-all text-sm mt-1 sm:mt-0 sm:text-base">
-                    derukhdj22@gmail.com
+          {/* Text + terminal */}
+          <div className="md:col-span-3 space-y-6">
+            {/* Terminal bio window */}
+            <div
+              className="border border-[#003d0f] bg-[#050f05] relative transition-all hover:border-[#00ff41]/40"
+              style={{ boxShadow: "inset 0 0 30px rgba(0,255,65,0.03)" }}
+            >
+              {/* Top accent */}
+              <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#00ff41]/40 to-transparent" />
+              {/* Titlebar */}
+              <div className="flex items-center gap-2 px-4 py-2 border-b border-[#003d0f] bg-[#00ff41]/5">
+                <span className="w-2.5 h-2.5 bg-[#ff3b30]" />
+                <span className="w-2.5 h-2.5 bg-[#ffb700]" />
+                <span className="w-2.5 h-2.5 bg-[#00ff41]" />
+                <span className="ml-3 text-[10px] text-[#1a4d1a] tracking-widest uppercase">
+                  profile.exe
+                </span>
+              </div>
+              <div className="p-6 text-sm leading-loose text-[#1a4d1a] space-y-4">
+                <p>
+                  &gt; User detected:{" "}
+                  <span className="text-[#00ff41] font-medium">
+                    Deru Khairan Djuharianto
                   </span>
-                </li>
-                <li className="flex items-start">
-                  <strong className="text-emerald-400 font-mono min-w-22.5">
-                    &gt; Freelance:
-                  </strong>
-                  <span className="text-slate-200">Available</span>
-                </li>
-              </ul>
+                  . A Software Engineering student dedicated to building
+                  scalable and secure digital ecosystems. Started the journey at{" "}
+                  <span className="text-white">SMK Citra Negara</span>,
+                  transforming raw logic into functional web-based solutions.
+                </p>
+                <p>
+                  &gt; Current focus:{" "}
+                  <span className="text-white">Telkom University</span>.
+                  Specialized in architecting{" "}
+                  <span className="text-white border-b border-dashed border-[#003d0f]">
+                    robust backend systems
+                  </span>{" "}
+                  while maintaining{" "}
+                  <span className="text-white border-b border-dashed border-[#003d0f]">
+                    high-performance frontend delivery
+                  </span>
+                  . I bridge the gap between complex data and user-centric
+                  design.
+                </p>
+                <p>
+                  &gt; Technical Roadmap: Proficient in{" "}
+                  <span className="text-[#00ff41]">Laravel</span> &{" "}
+                  <span className="text-[#00ff41]">Next.js</span>. Actively
+                  integrating{" "}
+                  <span className="text-[#ff3355] font-bold">
+                    Defensive Programming
+                  </span>
+                  —focusing on web security, API integrity, and optimizing
+                  system performance for modern threat landscapes.
+                </p>
+              </div>
+            </div>
+
+            {/* Status mini-terminal */}
+            <div className="border border-[#003d0f] bg-[#050f05] transition-all hover:border-[#00ff41]/40">
+              <div className="flex items-center gap-2 px-4 py-2 border-b border-[#003d0f]">
+                <span className="w-2 h-2 bg-[#ff3b30]" />
+                <span className="w-2 h-2 bg-[#ffb700]" />
+                <span className="w-2 h-2 bg-[#00ff41]" />
+                <span className="ml-3 text-[10px] text-[#1a4d1a] tracking-widest uppercase">
+                  status.sh
+                </span>
+              </div>
+              <div className="px-5 py-4 text-sm space-y-2 text-[#1a4d1a]">
+                <div className="flex gap-3">
+                  <span className="text-[#ffb700]">❯</span>
+                  <span>./check_readiness.sh</span>
+                </div>
+                <div className="pl-6 space-y-1.5">
+                  <p>
+                    <span className="text-[#00ff41]">✔</span> Specialized:
+                    Full-stack Web Development
+                  </p>
+                  <p>
+                    <span className="text-[#00ff41]">✔</span> Objective:
+                    Building secure & scalable Enterprise Apps
+                  </p>
+                  <p>
+                    <span className="text-[#00ff41]">✔</span> Stack:
+                    PHP/Laravel, JavaScript/Next.js, Python
+                  </p>
+                  <p>
+                    <span className="text-[#ffb700]">!</span> Current_Goal: Open
+                    for Internships & Collaborative Dev
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className="md:col-span-2 relative group max-w-75 mx-auto md:ml-auto w-full">
-            <div className="relative border-2 border-emerald-400 rounded-xl p-2 transition-transform duration-300 group-hover:-translate-x-2 group-hover:-translate-y-2 group-hover:shadow-[8px_8px_0_0_#34d399]">
-              <div className="bg-slate-800 rounded-lg aspect-square overflow-hidden relative">
-                {/* Overlay effect */}
-                <div className="absolute inset-0 bg-emerald-400/20 group-hover:opacity-0 transition-opacity duration-300 z-10 mix-blend-multiply"></div>
-                <img
-                  src="/profile-placeholder.jpg"
-                  alt="Deru Profile"
-                  onError={(e) => {
-                    e.currentTarget.src =
-                      "https://images.unsplash.com/photo-1549692520-acc6669e2f0c?q=80&w=600&auto=format&fit=crop";
-                  }}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105"
-                />
+          {/* Right: info grid + photo */}
+          <div className="md:col-span-2 space-y-8">
+            {/* Info grid */}
+            <div className="border border-[#003d0f] bg-[#050f05]">
+              <div className="flex items-center gap-2 px-4 py-2 border-b border-[#003d0f]">
+                <span className="w-2 h-2 bg-[#ff3b30]" />
+                <span className="w-2 h-2 bg-[#ffb700]" />
+                <span className="w-2 h-2 bg-[#00ff41]" />
+                <span className="ml-3 text-[10px] text-[#1a4d1a] tracking-widest uppercase">
+                  sys_info.json
+                </span>
               </div>
+              <ul className="divide-y divide-[#003d0f]">
+                {INFO.map((item, i) => (
+                  <li
+                    key={i}
+                    className="flex items-start gap-3 px-5 py-3 text-xs"
+                  >
+                    <span className="text-[#ffb700] min-w-27.5 shrink-0">
+                      {item.key}
+                    </span>
+                    <span
+                      className={
+                        item.green
+                          ? "text-[#00ff41] cursor-blink"
+                          : "text-[#1a4d1a]"
+                      }
+                    >
+                      {item.val}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
-            {/* The decorative frame behind */}
-            <div className="absolute top-4 left-4 border-2 border-emerald-400 rounded-xl w-full h-full -z-10 transition-transform duration-300 group-hover:translate-x-2 group-hover:translate-y-2"></div>
+
+            {/* Profile image */}
+            <div className="relative group w-fit">
+              <div className="border border-[#003d0f] p-1 bg-[#020d02] hover:border-[#00ff41]/50 transition-all duration-300 relative">
+                <div className="flex items-center gap-1.5 px-2 py-1.5 border-b border-[#003d0f] mb-1">
+                  <span className="w-2 h-2 bg-[#ff3b30]" />
+                  <span className="w-2 h-2 bg-[#ffb700]" />
+                  <span className="w-2 h-2 bg-[#00ff41]" />
+                  <span className="ml-auto text-[9px] text-[#1a4d1a]">
+                    profile.jpg
+                  </span>
+                </div>
+                <div className="relative aspect-square w-48 md:w-56 overflow-hidden border border-[#003d0f]">
+                  {/* Color overlay */}
+                  <div className="absolute inset-0 bg-[#00ff41]/15 group-hover:bg-transparent transition-all duration-500 z-10 mix-blend-color" />
+                  {/* Scanlines on image */}
+                  <div
+                    className="absolute inset-0 z-20 pointer-events-none opacity-40"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(rgba(18,16,16,0) 50%, rgba(0,0,0,0.3) 50%)",
+                      backgroundSize: "100% 4px",
+                    }}
+                  />
+                  <img
+                    src="/profile-placeholder.jpg"
+                    alt="Deru Khairan"
+                    onError={(e) => {
+                      e.currentTarget.src =
+                        "https://images.unsplash.com/photo-1549692520-acc6669e2f0c?q=80&w=400&auto=format&fit=crop";
+                    }}
+                    className="w-full h-full object-cover grayscale contrast-125 brightness-75 group-hover:brightness-100 group-hover:grayscale-0 transition-all duration-500"
+                  />
+                </div>
+              </div>
+              {/* Shadow frame */}
+              <div className="absolute top-3 left-3 border border-[#003d0f] w-full h-full -z-10 group-hover:border-[#00ff41]/20 transition-all duration-300" />
+            </div>
           </div>
         </div>
       </motion.div>

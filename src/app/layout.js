@@ -1,26 +1,30 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Share_Tech_Mono, Orbitron } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
-
-const geistMono = Geist_Mono({
+const shareTechMono = Share_Tech_Mono({
+  weight: "400",
   subsets: ["latin"],
   variable: "--font-mono",
 });
 
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["400", "700", "900"],
+});
+
 export const metadata = {
-  title: "Deru Khairan | Full-stack Developer",
+  title: "Deru Khairan Djuharianto | Portfolio",
   description:
-    "Portfolio of Deru Khairan Djuharianto, a Software Engineering student.",
+    "Full-Stack Developer & Security Enthusiast. Telkom University.",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className="font-sans antialiased">{children}</body>
+    <html lang="en" className={`${shareTechMono.variable} ${orbitron.variable}`}>
+      <body className="font-mono bg-[#020d02] text-[#00ff41] antialiased">
+        {children}
+      </body>
     </html>
   );
 }

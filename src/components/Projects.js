@@ -3,149 +3,175 @@ import { motion } from "framer-motion";
 import { Folder, ExternalLink } from "lucide-react";
 import { Github } from "./Icons";
 
-const projects = [
+const PROJECTS = [
   {
+    id: "P::001",
     title: "SMBGarasiBMW",
-    desc: "A comprehensive garage management system project specializing in database security, role-based access control, and SQL injection prevention techniques.",
-    link: "#",
+    desc: "Comprehensive garage management system specializing in database security, role-based access control, and SQL injection prevention techniques.",
     github: "https://github.com/EdselSpth/SMB-GarasiBMW",
-    tech: ["Laravel", "SQLi Security", "Tailwind CSS"],
+    link: null,
+    tech: ["Laravel", "SQLi/Sec", "Tailwind"],
+    highlight: true,
   },
   {
+    id: "P::002",
     title: "Web-Based POS",
-    desc: "A robust Point of Sales architecture with full inventory control, transaction handling, and automated sales analysis features.",
+    desc: "Robust Point of Sales architecture with full inventory control, transaction handling, and automated sales analysis features.",
+    github: null,
     link: "https://derudj.saungkoding.com",
-    github: "#",
     tech: ["PHP", "MySQL", "AdminLTE"],
   },
   {
+    id: "P::003",
     title: "E-Commerce Fresh",
-    desc: "An enterprise-grade platform for groceries, utilizing high-quality software architecture built completely on a structured Java backend.",
-    link: "https://github.com/DeruDJ22/Tubes_DPBO",
+    desc: "Enterprise-grade grocery platform utilizing high-quality software architecture built on a structured Java backend with OOP paradigm.",
     github: "https://github.com/DeruDJ22/Tubes_DPBO",
-    tech: ["Java", "OOP Paradigm", "MySQL"],
+    link: "https://github.com/DeruDJ22/Tubes_DPBO",
+    tech: ["Java", "OOP", "MySQL"],
   },
   {
+    id: "P::004",
     title: "Burger Shop UI",
-    desc: "A modern, highly interactive landing page design for a digital hamburger store, focusing on smooth animations and user experience.",
-    link: "https://github.com/DeruDJ22/projectSMK",
+    desc: "Modern, highly interactive landing page for a digital hamburger store — focusing on smooth animations and immersive user experience.",
     github: "https://github.com/DeruDJ22/projectSMK",
-    tech: ["HTML5", "CSS3", "Vanilla JS"],
+    link: "https://github.com/DeruDJ22/projectSMK",
+    tech: ["HTML5", "CSS3", "Vanilla_JS"],
   },
   {
+    id: "P::005",
     title: "Online Shop Design",
-    desc: "A modern, highly interactive landing page design for a online shop, focusing on smooth animations and user experience.",
-    link: "https://github.com/DeruDJ22/projectSMK/tree/main/Bootstrap",
+    desc: "Modern interactive landing page for an online shop with user-centric experience design and responsive Bootstrap grid system.",
     github: "https://github.com/DeruDJ22/projectSMK/tree/main/Bootstrap",
+    link: "https://github.com/DeruDJ22/projectSMK/tree/main/Bootstrap",
     tech: ["HTML5", "CSS3", "Bootstrap"],
   },
   {
-    title: "Helmet Detection System",
-    desc: "This project features a real-time safety helmet detection system, powered by a Next.js frontend and a FastAPI backend, utilizing the YOLOv8 model for high-accuracy object recognition.",
-    link: "#",
+    id: "P::006",
+    title: "Helmet Detect Sys",
+    desc: "Real-time safety helmet detection system — Next.js frontend, FastAPI backend, and YOLOv8 model for high-accuracy object recognition.",
     github: "https://github.com/DeruDJ22/CCI_Kelompok6",
+    link: null,
     tech: ["Next.js", "FastAPI", "YOLOv8"],
+    highlight: true,
   },
 ];
 
-const containerVariants = {
+const container = {
   hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
+  visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
 };
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
-  },
+const item = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
 };
 
 export default function Projects() {
   return (
-    <section id="projects" className="max-w-6xl mx-auto py-24 px-6 relative">
+    <section id="projects" className="max-w-6xl mx-auto py-24 px-6 font-mono">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
       >
-        <div className="flex items-center mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-200 flex items-center whitespace-nowrap">
-            <span className="text-emerald-400 font-mono mr-3 text-lg md:text-xl font-normal">
-              03.
-            </span>
-            Notable Projects
+        {/* Section header */}
+        <div className="flex items-center gap-4 mb-16 pb-4 border-b border-[#003d0f]">
+          <span className="text-[#ffb700] text-sm tracking-widest">[ 03.</span>
+          <h2
+            className="text-xl md:text-2xl font-bold text-white uppercase tracking-widest"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            DATA/PROJECTS
           </h2>
-          <div className="ml-6 h-px bg-slate-700 grow max-w-sm hidden sm:block"></div>
+          <span className="text-[#ffb700] text-sm">]</span>
+          <div className="flex-1 h-px bg-gradient-to-r from-[#003d0f] to-transparent hidden sm:block" />
         </div>
 
         <motion.div
-          variants={containerVariants}
+          variants={container}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-5"
         >
-          {projects.map((p, i) => (
+          {PROJECTS.map((p, i) => (
             <motion.div
               key={i}
-              variants={itemVariants}
-              whileHover={{ y: -8 }}
-              className="bg-[#112240] p-8 rounded-xl border border-transparent hover:border-emerald-400/30 transition-all group flex flex-col h-full shadow-lg hover:shadow-2xl hover:shadow-emerald-400/5 relative overflow-hidden"
+              variants={item}
+              whileHover={{ y: -4, boxShadow: "0 0 24px rgba(0,255,65,0.25)" }}
+              className={`bg-[#050f05] border flex flex-col h-full relative overflow-hidden transition-all duration-300 group ${
+                p.highlight ? "border-[#003d0f] hover:border-[#00ff41]/70" : "border-[#003d0f] hover:border-[#00ff41]/50"
+              }`}
             >
-              {/* Subtle gradient background on hover */}
-              <div className="absolute inset-0 bg-linear-to-br from-emerald-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              {/* Top scan line */}
+              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00ff41]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
-              <div className="flex justify-between items-center mb-8 text-emerald-400 z-10">
-                <Folder size={40} className="stroke-1" />
-                <div className="flex gap-4 items-center">
-                  {p.github !== "#" && (
-                    <a
-                      href={p.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-slate-400 hover:text-emerald-400 transition-colors"
-                    >
-                      <Github size={20} />
-                    </a>
-                  )}
-                  {p.link !== "#" && (
-                    <a
-                      href={p.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-slate-400 hover:text-emerald-400 transition-colors"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
-                  )}
-                </div>
+              {/* Terminal titlebar */}
+              <div className="flex items-center gap-1.5 px-3 py-2 bg-[#00ff41]/5 border-b border-[#003d0f]">
+                <span className="w-2 h-2 bg-[#ff3b30]" />
+                <span className="w-2 h-2 bg-[#ffb700]" />
+                <span className="w-2 h-2 bg-[#00ff41]" />
+                <span className="ml-2 text-[10px] text-[#1a4d1a] tracking-widest uppercase">
+                  PRJ_LOG_{p.id.split("::")[1]}
+                </span>
+                {p.highlight && (
+                  <span className="ml-auto text-[9px] text-[#00ff41] border border-[#003d0f] px-1.5 tracking-widest">
+                    FEATURED
+                  </span>
+                )}
               </div>
 
-              <h3 className="text-slate-200 text-xl font-bold mb-3 group-hover:text-emerald-400 transition-colors z-10">
-                {p.title}
-              </h3>
+              {/* Subtle grid bg on hover */}
+              <div
+                className="absolute inset-x-0 bottom-0 top-8 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+                style={{
+                  backgroundImage: "linear-gradient(rgba(0,255,65,0.04) 1px, transparent 1px)",
+                  backgroundSize: "100% 14px",
+                }}
+              />
 
-              <p className="text-slate-400 text-sm mb-8 grow leading-relaxed z-10">
-                {p.desc}
-              </p>
+              <div className="p-5 flex flex-col flex-1 z-10">
+                {/* Icon + links */}
+                <div className="flex justify-between items-center mb-5">
+                  <Folder size={32} className="text-[#00ff41] stroke-1 opacity-60 group-hover:opacity-100 transition-opacity" />
+                  <div className="flex gap-4 items-center">
+                    {p.github && (
+                      <a href={p.github} target="_blank" rel="noopener noreferrer"
+                        className="text-[#1a4d1a] hover:text-[#00ff41] transition-colors">
+                        <Github size={18} />
+                      </a>
+                    )}
+                    {p.link && (
+                      <a href={p.link} target="_blank" rel="noopener noreferrer"
+                        className="text-[#1a4d1a] hover:text-[#00ff41] transition-colors">
+                        <ExternalLink size={18} />
+                      </a>
+                    )}
+                  </div>
+                </div>
 
-              <div className="flex flex-wrap gap-x-4 gap-y-2 z-10 mt-auto">
-                {p.tech.map((t, idx) => (
-                  <span
-                    key={idx}
-                    className="text-xs font-mono text-slate-500 group-hover:text-emerald-400/80 transition-colors"
-                  >
-                    {t}
-                  </span>
-                ))}
+                {/* Title */}
+                <h3 className="text-white text-base font-bold uppercase tracking-wider mb-3 group-hover:text-[#00ff41] transition-colors flex items-center gap-2">
+                  <span className="text-[#00ff41] text-sm">&gt;</span>
+                  {p.title}
+                </h3>
+
+                {/* Desc */}
+                <p className="text-[#1a4d1a] text-xs leading-relaxed flex-1 mb-5">
+                  {p.desc}
+                </p>
+
+                {/* Tech tags */}
+                <div className="flex flex-wrap gap-2 pt-4 border-t border-[#003d0f]">
+                  {p.tech.map((t, idx) => (
+                    <span
+                      key={idx}
+                      className="text-[10px] text-[#00e5ff]/60 bg-[#00e5ff]/5 border border-[#00e5ff]/10 px-2 py-0.5 uppercase tracking-widest group-hover:text-[#00e5ff]/90 group-hover:border-[#00e5ff]/20 transition-colors"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}
