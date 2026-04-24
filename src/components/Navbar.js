@@ -37,14 +37,14 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 h-[68px] flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-6 h-17 flex items-center justify-between">
         {/* Logo */}
         <motion.a
           href="#"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="font-[family-name:var(--font-display)] text-[#00ff41] text-lg font-black tracking-widest hover:text-white transition-colors"
+          className="font-display text-[#00ff41] text-lg font-black tracking-widest hover:text-white transition-colors"
           style={{ textShadow: "0 0 16px rgba(0,255,65,0.5)" }}
         >
           D.K<span className="cursor-blink">_</span>
@@ -64,7 +64,7 @@ export default function Navbar() {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="text-[#1a4d1a] hover:text-[#00ff41] text-sm transition-colors group flex items-center gap-1"
+              className="text-[#a1c1a1] hover:text-[#00ff41] text-sm transition-colors group flex items-center gap-1"
             >
               <span className="text-[#ffb700] text-[10px]">{l.num}.</span>
               {l.name.toLowerCase()}
@@ -98,14 +98,14 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="md:hidden absolute top-[68px] left-0 w-full bg-[#020d02]/98 border-b border-[#00ff41]/30 py-8 flex flex-col items-center gap-6"
+            className="md:hidden absolute top-17 left-0 w-full bg-[#020d02]/98 border-b border-[#00ff41]/30 py-8 flex flex-col items-center gap-6"
           >
             {links.map((l, i) => (
               <a
                 key={i}
                 href={l.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-[#1a4d1a] hover:text-[#00ff41] font-mono text-base transition-colors flex items-center gap-2"
+                className="text-[#a1c1a1] hover:text-[#00ff41] font-mono text-base transition-colors flex items-center gap-2"
               >
                 <span className="text-[#ffb700] text-xs">{l.num}.</span>
                 /{l.name.toLowerCase()}
@@ -117,7 +117,7 @@ export default function Navbar() {
             >
               ./contact.sh
             </a>
-            <div className="flex gap-5 mt-2 text-[#1a4d1a]">
+            <div className="flex gap-5 mt-2 text-[#a1c1a1]">
               <a href="https://github.com/DeruDJ22" className="hover:text-[#00ff41] transition-colors"><Github size={22} /></a>
               <a href="#" className="hover:text-[#00ff41] transition-colors"><Linkedin size={22} /></a>
               <a href="mailto:derukhdj22@gmail.com" className="hover:text-[#00ff41] transition-colors"><Mail size={22} /></a>

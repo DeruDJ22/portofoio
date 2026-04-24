@@ -49,11 +49,11 @@ export default function About() {
                 <span className="w-2.5 h-2.5 bg-[#ff3b30]" />
                 <span className="w-2.5 h-2.5 bg-[#ffb700]" />
                 <span className="w-2.5 h-2.5 bg-[#00ff41]" />
-                <span className="ml-3 text-[10px] text-[#1a4d1a] tracking-widest uppercase">
+                <span className="ml-3 text-xs text-[#a1c1a1] tracking-widest uppercase">
                   profile.exe
                 </span>
               </div>
-              <div className="p-6 text-sm leading-loose text-[#1a4d1a] space-y-4">
+              <div className="p-6 text-base leading-loose text-[#a1c1a1] space-y-4">
                 <p>
                   &gt; User detected:{" "}
                   <span className="text-[#00ff41] font-medium">
@@ -98,11 +98,11 @@ export default function About() {
                 <span className="w-2 h-2 bg-[#ff3b30]" />
                 <span className="w-2 h-2 bg-[#ffb700]" />
                 <span className="w-2 h-2 bg-[#00ff41]" />
-                <span className="ml-3 text-[10px] text-[#1a4d1a] tracking-widest uppercase">
+                <span className="ml-3 text-xs text-[#a1c1a1] tracking-widest uppercase">
                   status.sh
                 </span>
               </div>
-              <div className="px-5 py-4 text-sm space-y-2 text-[#1a4d1a]">
+              <div className="px-5 py-4 text-base space-y-2 text-[#a1c1a1]">
                 <div className="flex gap-3">
                   <span className="text-[#ffb700]">❯</span>
                   <span>./check_readiness.sh</span>
@@ -137,7 +137,7 @@ export default function About() {
                 <span className="w-2 h-2 bg-[#ff3b30]" />
                 <span className="w-2 h-2 bg-[#ffb700]" />
                 <span className="w-2 h-2 bg-[#00ff41]" />
-                <span className="ml-3 text-[10px] text-[#1a4d1a] tracking-widest uppercase">
+                <span className="ml-3 text-xs text-[#a1c1a1] tracking-widest uppercase">
                   sys_info.json
                 </span>
               </div>
@@ -154,7 +154,7 @@ export default function About() {
                       className={
                         item.green
                           ? "text-[#00ff41] cursor-blink"
-                          : "text-[#1a4d1a]"
+                          : "text-[#a1c1a1]"
                       }
                     >
                       {item.val}
@@ -171,7 +171,7 @@ export default function About() {
                   <span className="w-2 h-2 bg-[#ff3b30]" />
                   <span className="w-2 h-2 bg-[#ffb700]" />
                   <span className="w-2 h-2 bg-[#00ff41]" />
-                  <span className="ml-auto text-[9px] text-[#1a4d1a]">
+                  <span className="ml-auto text-[9px] text-[#a1c1a1]">
                     profile.jpg
                   </span>
                 </div>

@@ -24,7 +24,7 @@ export default function Footer() {
             >
               GET_IN_TOUCH
             </h2>
-            <p className="text-[#1a4d1a] text-sm leading-relaxed max-w-sm">
+            <p className="text-[#a1c1a1] text-base leading-relaxed max-w-sm">
               Open to freelance projects, collaborations, and full-time opportunities.
               Best way to reach me is via email.
             </p>
@@ -43,9 +43,9 @@ export default function Footer() {
               <span className="w-2 h-2 bg-[#ff3b30]" />
               <span className="w-2 h-2 bg-[#ffb700]" />
               <span className="w-2 h-2 bg-[#00ff41]" />
-              <span className="ml-3 text-[10px] text-[#1a4d1a] tracking-widest uppercase">ssh_connect.sh</span>
+              <span className="ml-3 text-xs text-[#a1c1a1] tracking-widest uppercase">ssh_connect.sh</span>
             </div>
-            <div className="px-5 py-4 text-sm space-y-2 text-[#1a4d1a]">
+            <div className="px-5 py-4 text-base space-y-2 text-[#a1c1a1]">
               <div className="flex gap-3"><span className="text-[#ffb700]">❯</span><span>./reach_out.sh --mode=hire</span></div>
               <div className="pl-6 space-y-1">
                 <p><span className="text-[#00ff41]">✔</span> Connection established.</p>
@@ -64,14 +64,14 @@ export default function Footer() {
         {/* Social links */}
         <div className="flex gap-4 mb-8 md:hidden">
           {SOCIALS.map((s, i) => (
-            <a key={i} href={s.href} className="text-[#1a4d1a] hover:text-[#00ff41] transition-colors">
+            <a key={i} href={s.href} className="text-[#a1c1a1] hover:text-[#00ff41] transition-colors">
               <s.icon size={20} />
             </a>
           ))}
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-6 border-t border-[#003d0f] flex flex-col sm:flex-row justify-between items-center gap-3 text-[#1a4d1a] text-xs tracking-widest">
+        <div className="pt-6 border-t border-[#003d0f] flex flex-col sm:flex-row justify-between items-center gap-3 text-[#a1c1a1] text-xs tracking-widest">
           <p>&lt; / system.exit() &gt;</p>
           <a
             href="https://github.com/DeruDJ22"

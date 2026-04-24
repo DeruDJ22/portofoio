@@ -33,7 +33,7 @@ function SkillBar({ skill, index }) {
             <span className="text-[#00ff41] text-xs">■</span>
             {skill.label}
           </p>
-          <p className="text-[#1a4d1a] text-[10px] tracking-widest uppercase mt-0.5">
+          <p className="text-[#a1c1a1] text-xs tracking-widest uppercase mt-0.5">
             {skill.cat}
           </p>
         </div>
@@ -88,16 +88,16 @@ export default function Skills() {
             <span className="w-2 h-2 bg-[#ff3b30]" />
             <span className="w-2 h-2 bg-[#ffb700]" />
             <span className="w-2 h-2 bg-[#00ff41]" />
-            <span className="ml-3 text-[10px] text-[#1a4d1a] tracking-widest uppercase">
+            <span className="ml-3 text-xs text-[#a1c1a1] tracking-widest uppercase">
               skill_scan.sh
             </span>
           </div>
-          <div className="px-5 py-4 text-sm space-y-1.5 text-[#1a4d1a]">
+          <div className="px-5 py-4 text-base space-y-1.5 text-[#a1c1a1]">
             <div className="flex gap-3">
               <span className="text-[#ffb700]">❯</span>
               <span>nmap -sV --skill-scan 192.168.deru.local</span>
             </div>
-            <p className="pl-6 text-[#1a4d1a] italic">
+            <p className="pl-6 text-[#a1c1a1] italic">
               // Scanning target: Deru Khairan Djuharianto...
             </p>
             <p className="pl-6">

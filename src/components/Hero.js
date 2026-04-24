@@ -61,7 +61,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="flex items-center gap-3 text-[11px] tracking-widest text-[#1a4d1a]"
+          className="flex items-center gap-3 text-xs tracking-widest text-[#a1c1a1]"
         >
           <span
             className="w-2 h-2 rounded-full bg-[#00ff41] status-pulse inline-block"
@@ -72,7 +72,7 @@ export default function Hero() {
 
         {/* Whoami line */}
         <div className="flex flex-col gap-1">
-          <p className="text-[#1a4d1a] text-sm">root@localhost:~# whoami</p>
+          <p className="text-[#a1c1a1] text-base">root@localhost:~# whoami</p>
           <h1
             className="text-white text-5xl md:text-7xl lg:text-8xl font-black tracking-tight uppercase leading-none"
             style={{ fontFamily: "var(--font-display)" }}
@@ -96,7 +96,7 @@ export default function Hero() {
 
         {/* Role typewriter */}
         <div className="mt-4">
-          <p className="text-[#1a4d1a] text-sm mb-2">
+          <p className="text-[#a1c1a1] text-base mb-2">
             root@localhost:~# execute ./roles.sh
           </p>
           <div className="flex items-center gap-2 flex-wrap">
@@ -118,7 +118,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.6, duration: 0.5 }}
-          className="max-w-2xl text-[#1a4d1a] text-sm leading-relaxed border-l-2 border-[#00ff41]/40 pl-5 py-3 bg-[#00ff41]/2 mt-8"
+          className="max-w-2xl text-[#a1c1a1] text-base leading-relaxed border-l-2 border-[#00ff41]/40 pl-5 py-3 bg-[#00ff41]/2 mt-8"
         >
           <p>
             &gt; Initializing profile...
@@ -157,7 +157,7 @@ export default function Hero() {
           </a>
           <a
             href="mailto:derukhdj22@gmail.com"
-            className="inline-flex items-center gap-2 px-6 py-3 border border-[#003d0f] text-[#1a4d1a] text-sm uppercase tracking-widest hover:border-[#00ff41]/40 hover:text-[#00cc33] transition-all"
+            className="inline-flex items-center gap-2 px-6 py-3 border border-[#003d0f] text-[#a1c1a1] text-sm uppercase tracking-widest hover:border-[#00ff41]/40 hover:text-[#00cc33] transition-all"
           >
             ssh contact@deru
           </a>

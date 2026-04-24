@@ -113,11 +113,11 @@ export default function Projects() {
                 <span className="w-2 h-2 bg-[#ff3b30]" />
                 <span className="w-2 h-2 bg-[#ffb700]" />
                 <span className="w-2 h-2 bg-[#00ff41]" />
-                <span className="ml-2 text-[10px] text-[#1a4d1a] tracking-widest uppercase">
+                <span className="ml-2 text-xs text-[#a1c1a1] tracking-widest uppercase">
                   PRJ_LOG_{p.id.split("::")[1]}
                 </span>
                 {p.highlight && (
-                  <span className="ml-auto text-[9px] text-[#00ff41] border border-[#003d0f] px-1.5 tracking-widest">
+                  <span className="ml-auto text-[10px] text-[#00ff41] border border-[#003d0f] px-1.5 tracking-widest">
                     FEATURED
                   </span>
                 )}
@@ -146,7 +146,7 @@ export default function Projects() {
                         href={p.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[#1a4d1a] hover:text-[#00ff41] transition-colors"
+                        className="text-[#a1c1a1] hover:text-[#00ff41] transition-colors"
                       >
                         <Github size={18} />
                       </a>
@@ -156,7 +156,7 @@ export default function Projects() {
                         href={p.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[#1a4d1a] hover:text-[#00ff41] transition-colors"
+                        className="text-[#a1c1a1] hover:text-[#00ff41] transition-colors"
                       >
                         <ExternalLink size={18} />
                       </a>
@@ -165,13 +165,13 @@ export default function Projects() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-white text-base font-bold uppercase tracking-wider mb-3 group-hover:text-[#00ff41] transition-colors flex items-center gap-2">
+                <h3 className="text-white text-lg font-bold uppercase tracking-wider mb-3 group-hover:text-[#00ff41] transition-colors flex items-center gap-2">
                   <span className="text-[#00ff41] text-sm">&gt;</span>
                   {p.title}
                 </h3>
 
                 {/* Desc */}
-                <p className="text-[#1a4d1a] text-xs leading-relaxed flex-1 mb-5">
+                <p className="text-[#a1c1a1] text-sm leading-relaxed flex-1 mb-5">
                   {p.desc}
                 </p>
 
@@ -180,7 +180,7 @@ export default function Projects() {
                   {p.tech.map((t, idx) => (
                     <span
                       key={idx}
-                      className="text-[10px] text-[#00e5ff]/60 bg-[#00e5ff]/5 border border-[#00e5ff]/10 px-2 py-0.5 uppercase tracking-widest group-hover:text-[#00e5ff]/90 group-hover:border-[#00e5ff]/20 transition-colors"
+                      className="text-[11px] text-[#00e5ff]/60 bg-[#00e5ff]/5 border border-[#00e5ff]/10 px-2 py-0.5 uppercase tracking-widest group-hover:text-[#00e5ff]/90 group-hover:border-[#00e5ff]/20 transition-colors"
                     >
                       {t}
                     </span>
