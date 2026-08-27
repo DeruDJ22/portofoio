@@ -1,6 +1,5 @@
 "use client";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 const SKILLS = [
   { label: "HTML5_&&_CSS3", level: 85, cat: "sys.frontend" },
@@ -25,12 +24,12 @@ function SkillBar({ skill, index }) {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.4, delay: index * 0.07 }}
-      className="group"
+      className="group hover:bg-[#00ff41]/[0.02] transition-colors px-3 py-2 -mx-3 rounded-sm"
     >
-      <div className="flex justify-between items-end mb-2 pb-1 border-b border-[#003d0f]">
+      <div className="flex justify-between items-end mb-2 pb-1 border-b border-[#003d0f] group-hover:border-[#00ff41]/20 transition-colors">
         <div>
           <p className="text-white text-sm font-bold uppercase flex items-center gap-2">
-            <span className="text-[#00ff41] text-xs">■</span>
+            <span className="text-[#00ff41] text-xs group-hover:scale-125 transition-transform">■</span>
             {skill.label}
           </p>
           <p className="text-[#a1c1a1] text-xs tracking-widest uppercase mt-0.5">
@@ -41,7 +40,7 @@ function SkillBar({ skill, index }) {
       </div>
 
       {/* ASCII bar — desktop */}
-      <div className="hidden sm:block text-[#00ff41]/70 text-xs tracking-widest font-mono mt-1">
+      <div className="hidden sm:block text-[#00ff41]/70 text-xs tracking-widest font-mono mt-1 group-hover:text-[#00ff41]/90 transition-colors">
         [{blocks(skill.level)}]
       </div>
 
@@ -83,11 +82,17 @@ export default function Skills() {
         </div>
 
         {/* nmap-style terminal header */}
-        <div className="border border-[#003d0f] bg-[#050f05] mb-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="border border-[#003d0f] bg-[#050f05] mb-10 group hover:border-[#00ff41]/30 transition-all"
+        >
           <div className="flex items-center gap-2 px-4 py-2 border-b border-[#003d0f]">
-            <span className="w-2 h-2 bg-[#ff3b30]" />
-            <span className="w-2 h-2 bg-[#ffb700]" />
-            <span className="w-2 h-2 bg-[#00ff41]" />
+            <span className="w-2 h-2 bg-[#ff3b30] rounded-sm" />
+            <span className="w-2 h-2 bg-[#ffb700] rounded-sm" />
+            <span className="w-2 h-2 bg-[#00ff41] rounded-sm" />
             <span className="ml-3 text-xs text-[#a1c1a1] tracking-widest uppercase">
               skill_scan.sh
             </span>
@@ -108,10 +113,10 @@ export default function Skills() {
               PORT &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STATE &nbsp;&nbsp; SERVICE
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Skill bars */}
-        <div className="grid md:grid-cols-2 gap-x-16 gap-y-10">
+        <div className="grid md:grid-cols-2 gap-x-16 gap-y-6">
           {SKILLS.map((s, i) => (
             <SkillBar key={i} skill={s} index={i} />
           ))}

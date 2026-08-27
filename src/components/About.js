@@ -38,17 +38,21 @@ export default function About() {
           {/* Text + terminal */}
           <div className="md:col-span-3 space-y-6">
             {/* Terminal bio window */}
-            <div
-              className="border border-[#003d0f] bg-[#050f05] relative transition-all hover:border-[#00ff41]/40"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="border border-[#003d0f] bg-[#050f05] relative transition-all hover:border-[#00ff41]/40 group"
               style={{ boxShadow: "inset 0 0 30px rgba(0,255,65,0.03)" }}
             >
               {/* Top accent */}
-              <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#00ff41]/40 to-transparent" />
+              <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#00ff41]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               {/* Titlebar */}
               <div className="flex items-center gap-2 px-4 py-2 border-b border-[#003d0f] bg-[#00ff41]/5">
-                <span className="w-2.5 h-2.5 bg-[#ff3b30]" />
-                <span className="w-2.5 h-2.5 bg-[#ffb700]" />
-                <span className="w-2.5 h-2.5 bg-[#00ff41]" />
+                <span className="w-2.5 h-2.5 bg-[#ff3b30] rounded-sm" />
+                <span className="w-2.5 h-2.5 bg-[#ffb700] rounded-sm" />
+                <span className="w-2.5 h-2.5 bg-[#00ff41] rounded-sm" />
                 <span className="ml-3 text-xs text-[#a1c1a1] tracking-widest uppercase">
                   profile.exe
                 </span>
@@ -68,11 +72,11 @@ export default function About() {
                   &gt; Current focus:{" "}
                   <span className="text-white">Telkom University</span>.
                   Specialized in architecting{" "}
-                  <span className="text-white border-b border-dashed border-[#003d0f]">
+                  <span className="text-white border-b border-dashed border-[#003d0f] hover:border-[#00ff41]/40 transition-colors">
                     robust backend systems
                   </span>{" "}
                   while maintaining{" "}
-                  <span className="text-white border-b border-dashed border-[#003d0f]">
+                  <span className="text-white border-b border-dashed border-[#003d0f] hover:border-[#00ff41]/40 transition-colors">
                     high-performance frontend delivery
                   </span>
                   . I bridge the gap between complex data and user-centric
@@ -90,14 +94,20 @@ export default function About() {
                   system performance for modern threat landscapes.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Status mini-terminal */}
-            <div className="border border-[#003d0f] bg-[#050f05] transition-all hover:border-[#00ff41]/40">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="border border-[#003d0f] bg-[#050f05] transition-all hover:border-[#00ff41]/40 group"
+            >
               <div className="flex items-center gap-2 px-4 py-2 border-b border-[#003d0f]">
-                <span className="w-2 h-2 bg-[#ff3b30]" />
-                <span className="w-2 h-2 bg-[#ffb700]" />
-                <span className="w-2 h-2 bg-[#00ff41]" />
+                <span className="w-2 h-2 bg-[#ff3b30] rounded-sm" />
+                <span className="w-2 h-2 bg-[#ffb700] rounded-sm" />
+                <span className="w-2 h-2 bg-[#00ff41] rounded-sm" />
                 <span className="ml-3 text-xs text-[#a1c1a1] tracking-widest uppercase">
                   status.sh
                 </span>
@@ -126,26 +136,36 @@ export default function About() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Right: info grid + photo */}
           <div className="md:col-span-2 space-y-8">
             {/* Info grid */}
-            <div className="border border-[#003d0f] bg-[#050f05]">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="border border-[#003d0f] bg-[#050f05] group hover:border-[#00ff41]/30 transition-all"
+            >
               <div className="flex items-center gap-2 px-4 py-2 border-b border-[#003d0f]">
-                <span className="w-2 h-2 bg-[#ff3b30]" />
-                <span className="w-2 h-2 bg-[#ffb700]" />
-                <span className="w-2 h-2 bg-[#00ff41]" />
+                <span className="w-2 h-2 bg-[#ff3b30] rounded-sm" />
+                <span className="w-2 h-2 bg-[#ffb700] rounded-sm" />
+                <span className="w-2 h-2 bg-[#00ff41] rounded-sm" />
                 <span className="ml-3 text-xs text-[#a1c1a1] tracking-widest uppercase">
                   sys_info.json
                 </span>
               </div>
               <ul className="divide-y divide-[#003d0f]">
                 {INFO.map((item, i) => (
-                  <li
+                  <motion.li
                     key={i}
-                    className="flex items-start gap-3 px-5 py-3 text-xs"
+                    initial={{ opacity: 0, x: 10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: 0.05 * i }}
+                    className="flex items-start gap-3 px-5 py-3 text-xs hover:bg-[#00ff41]/5 transition-colors"
                   >
                     <span className="text-[#ffb700] min-w-27.5 shrink-0">
                       {item.key}
@@ -159,18 +179,24 @@ export default function About() {
                     >
                       {item.val}
                     </span>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
 
             {/* Profile image */}
-            <div className="relative group w-fit">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.25 }}
+              className="relative group w-fit"
+            >
               <div className="border border-[#003d0f] p-1 bg-[#020d02] hover:border-[#00ff41]/50 transition-all duration-300 relative">
                 <div className="flex items-center gap-1.5 px-2 py-1.5 border-b border-[#003d0f] mb-1">
-                  <span className="w-2 h-2 bg-[#ff3b30]" />
-                  <span className="w-2 h-2 bg-[#ffb700]" />
-                  <span className="w-2 h-2 bg-[#00ff41]" />
+                  <span className="w-2 h-2 bg-[#ff3b30] rounded-sm" />
+                  <span className="w-2 h-2 bg-[#ffb700] rounded-sm" />
+                  <span className="w-2 h-2 bg-[#00ff41] rounded-sm" />
                   <span className="ml-auto text-[9px] text-[#a1c1a1]">
                     profile.jpg
                   </span>
@@ -199,8 +225,8 @@ export default function About() {
                 </div>
               </div>
               {/* Shadow frame */}
-              <div className="absolute top-3 left-3 border border-[#003d0f] w-full h-full -z-10 group-hover:border-[#00ff41]/20 transition-all duration-300" />
-            </div>
+              <div className="absolute top-3 left-3 border border-[#003d0f] w-full h-full -z-10 group-hover:border-[#00ff41]/20 group-hover:top-4 group-hover:left-4 transition-all duration-300" />
+            </motion.div>
           </div>
         </div>
       </motion.div>

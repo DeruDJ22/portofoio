@@ -224,12 +224,60 @@ body::after {
   animation: status-pulse 1.5s ease-in-out infinite;
 }
 
+/* ─── Enhanced: Smooth focus states ─── */
+a:focus-visible,
+button:focus-visible {
+  outline: 1px solid var(--g);
+  outline-offset: 2px;
+}
+
+/* ─── Enhanced: Loader spinner for PPT download ─── */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* ─── Enhanced: Smooth section transitions ─── */
+section {
+  transition: opacity 0.3s ease;
+}
+
+/* ─── Enhanced: Terminal window dot improvements ─── */
+.rounded-sm {
+  border-radius: 1px;
+}
+
+/* ─── Enhanced: Text glow on hover for interactive elements ─── */
+.glow-text:hover {
+  text-shadow: 0 0 12px rgba(0, 255, 65, 0.4);
+}
+
+/* ─── Enhanced: Mobile touch targets ─── */
+@media (max-width: 768px) {
+  nav a,
+  button {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
   .glitch::before,
   .glitch::after {
+    animation: none;
+  }
+  .animate-spin {
     animation: none;
   }
 }
