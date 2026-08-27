@@ -25,6 +25,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd ~/portfolio
+            git reset --hard
             git pull origin master
             npm install
             npm run build
