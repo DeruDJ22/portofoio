@@ -274,7 +274,10 @@ section {
     scroll-behavior: auto;
   }
   .glitch::before,
-  .glitch::after {
+  .glitch::after,
+  .cursor-blink,
+  .status-pulse,
+  .screen-flicker {
     animation: none;
   }
   .animate-spin {

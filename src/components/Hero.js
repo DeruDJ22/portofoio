@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, MotionConfig } from "framer-motion";
 
 const ROLES = [
   "Software_Engineer",
@@ -10,13 +10,15 @@ const ROLES = [
 ];
 
 export default function Hero() {
-  const [text, setText] = useState("");
+  const prefersReduced = typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const [text, setText] = useState(prefersReduced ? ROLES[0] : "");
   const [deleting, setDeleting] = useState(false);
   const [roleIdx, setRoleIdx] = useState(0);
   const [speed, setSpeed] = useState(130);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
+    if (prefersReduced) return;
     const full = ROLES[roleIdx % ROLES.length];
     const timer = setTimeout(() => {
       if (!deleting) {
@@ -47,6 +49,7 @@ export default function Hero() {
   }, []);
 
   return (
+    <MotionConfig reducedMotion="user">
     <section className="relative flex flex-col justify-center min-h-screen max-w-6xl mx-auto pt-20 overflow-hidden font-mono">
       {/* Animated grid bg */}
       <div
@@ -231,5 +234,6 @@ export default function Hero() {
         </motion.div>
       </motion.div>
     </section>
+    </MotionConfig>
   );
 }
