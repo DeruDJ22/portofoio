@@ -8,28 +8,49 @@ export default function MatrixRain() {
     const canvas = canvasRef.current;
     if (!canvas) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
     const ctx = canvas.getContext("2d");
+
+    // Mobile detection: touch screen or narrow viewport
+    const isMobile =
+      window.matchMedia("(pointer: coarse)").matches ||
+      window.innerWidth < 768;
+
+    const CHARS = "アイウエオカキクケコサシスセソタチツテトナニヌネノ01アィウェォ10アイ01";
+    const COL_W = isMobile ? 32 : 16;
+    const FRAME_SKIP = isMobile ? 2 : 1; // draw every Nth frame on mobile
+    let drops = [];
+    let frame = 0;
+    let rafId;
+    let visible = !document.hidden;
 
     const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
-    resize();
-    window.addEventListener("resize", resize);
-
-    const CHARS = "アイウエオカキクケコサシスセソタチツテトナニヌネノ01アィウェォ10アイ01";
-    const COL_W = 16;
-    let drops = [];
 
     const init = () => {
       const cols = Math.floor(canvas.width / COL_W);
       drops = Array(cols).fill(1);
     };
-    init();
-    window.addEventListener("resize", init);
 
-    let animId;
+    const handleResize = () => {
+      resize();
+      init();
+    };
+
     const draw = () => {
+      if (!visible) {
+        rafId = requestAnimationFrame(draw);
+        return;
+      }
+
+      frame++;
+      if (frame % FRAME_SKIP !== 0) {
+        rafId = requestAnimationFrame(draw);
+        return;
+      }
+
       ctx.fillStyle = "rgba(2, 13, 2, 0.05)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = "#00ff41";
@@ -41,15 +62,27 @@ export default function MatrixRain() {
         if (y * COL_W > canvas.height && Math.random() > 0.975) drops[i] = 0;
         drops[i]++;
       });
-      animId = requestAnimationFrame(draw);
+
+      rafId = requestAnimationFrame(draw);
     };
-    const interval = setInterval(draw, 50);
+
+    const onVisibility = () => {
+      visible = !document.hidden;
+    };
+
+    // Initial setup
+    resize();
+    init();
+    draw();
+
+    // Event listeners
+    window.addEventListener("resize", handleResize);
+    document.addEventListener("visibilitychange", onVisibility);
 
     return () => {
-      clearInterval(interval);
-      cancelAnimationFrame(animId);
-      window.removeEventListener("resize", resize);
-      window.removeEventListener("resize", init);
+      cancelAnimationFrame(rafId);
+      window.removeEventListener("resize", handleResize);
+      document.removeEventListener("visibilitychange", onVisibility);
     };
   }, []);
 
