@@ -108,7 +108,7 @@ export default function Footer() {
           >
             [ Compiled by Deru Khairan Djuharianto ]
           </a>
-          <p>© 2025 :: ALL RIGHTS RESERVED</p>
+          <p>© {new Date().getFullYear()} :: ALL RIGHTS RESERVED</p>
         </div>
       </div>
     </footer>
