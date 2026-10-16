@@ -226,7 +226,7 @@ export default function Navbar() {
               ./contact.sh
             </a>
             <div className="flex gap-5 mt-2 text-[#a1c1a1]">
-              <a href="https://github.com/DeruDJ22" className="hover:text-[#00ff41] transition-colors"><Github size={22} /></a>
+              <a href="https://github.com/DeruDJ22" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-[#00ff41] transition-colors"><Github size={22} /></a>
               <a href="#" className="hover:text-[#00ff41] transition-colors"><Linkedin size={22} /></a>
               <a href="mailto:derukhdj22@gmail.com" className="hover:text-[#00ff41] transition-colors"><Mail size={22} /></a>
             </div>
