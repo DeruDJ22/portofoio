@@ -4,14 +4,10 @@
 
 :root {
   --g: #00ff41;
-  --gd: #00cc33;
   --gdark: #003d0f;
-  --gdim: #a1c1a1;
-  --amber: #ffb700;
   --cyan: #00e5ff;
   --red: #ff3355;
   --bg: #020d02;
-  --bg2: #050f05;
 }
 
 @theme inline {
@@ -183,31 +179,6 @@ body::after {
   animation: cursor-blink 0.9s step-end infinite;
 }
 
-/* Skill bar animation */
-@keyframes skill-fill {
-  from {
-    width: 0;
-  }
-}
-
-/* Screen flicker */
-@keyframes flicker {
-  0%,
-  94%,
-  100% {
-    opacity: 1;
-  }
-  95% {
-    opacity: 0.96;
-  }
-  97% {
-    opacity: 0.98;
-  }
-}
-.screen-flicker {
-  animation: flicker 10s infinite;
-}
-
 /* Status dot pulse */
 @keyframes status-pulse {
   0%,
@@ -254,11 +225,6 @@ section {
   border-radius: 1px;
 }
 
-/* ─── Enhanced: Text glow on hover for interactive elements ─── */
-.glow-text:hover {
-  text-shadow: 0 0 12px rgba(0, 255, 65, 0.4);
-}
-
 /* ─── Enhanced: Mobile touch targets ─── */
 @media (max-width: 768px) {
   nav a,
@@ -276,8 +242,7 @@ section {
   .glitch::before,
   .glitch::after,
   .cursor-blink,
-  .status-pulse,
-  .screen-flicker {
+  .status-pulse {
     animation: none;
   }
   .animate-spin {
