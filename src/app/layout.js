@@ -17,6 +17,19 @@ const orbitron = Orbitron({
 export const metadata = {
   title: "Deru Khairan Djuharianto | Portfolio",
   description: "Full-Stack Developer & Security Enthusiast. Telkom University.",
+  metadataBase: new URL("https://portofoio-zeta.vercel.app"),
+  openGraph: {
+    title: "Deru Khairan Djuharianto | Portfolio",
+    description: "Full-Stack Developer & Security Enthusiast. Telkom University.",
+    url: "https://portofoio-zeta.vercel.app",
+    siteName: "Deru Khairan Djuharianto Portfolio",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Deru Khairan Djuharianto | Portfolio",
+    description: "Full-Stack Developer & Security Enthusiast. Telkom University.",
+  },
 };
 
 export default function RootLayout({ children }) {
