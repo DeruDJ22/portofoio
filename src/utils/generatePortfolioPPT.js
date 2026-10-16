@@ -15,7 +15,7 @@ const C = {
   rose: "F43F5E",         // Accent rose/red
   white: "FFFFFF",        // Crisp white text
   textMuted: "94A3B8",    // Secondary text
-  textSubtle: "64748B",   // Subtle caption text
+  textSubtle: "8494AB",   // Subtle caption text
   darkBar: "03060C",      // Top/bottom bar fill
 };
 
