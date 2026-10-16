@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const INFO = [
@@ -213,14 +214,12 @@ export default function About() {
                       backgroundSize: "100% 4px",
                     }}
                   />
-                  <img
+                  <Image
                     src="/profile-placeholder.jpg"
                     alt="Deru Khairan"
-                    onError={(e) => {
-                      e.currentTarget.src =
-                        "https://images.unsplash.com/photo-1549692520-acc6669e2f0c?q=80&w=400&auto=format&fit=crop";
-                    }}
-                    className="w-full h-full object-cover grayscale contrast-125 brightness-75 group-hover:brightness-100 group-hover:grayscale-0 transition-all duration-500"
+                    fill
+                    sizes="(max-width: 768px) 12rem, 14rem"
+                    className="object-cover grayscale contrast-125 brightness-75 group-hover:brightness-100 group-hover:grayscale-0 transition-all duration-500"
                   />
                 </div>
               </div>
