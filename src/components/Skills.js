@@ -103,7 +103,7 @@ export default function Skills() {
               <span>nmap -sV --skill-scan 192.168.deru.local</span>
             </div>
             <p className="pl-6 text-[#a1c1a1] italic">
-              // Scanning target: Deru Khairan Djuharianto...
+              { /* Scanning target: Deru Khairan Djuharianto... */ }
             </p>
             <p className="pl-6">
               <span className="text-[#00ff41]">HOST IS UP</span> — 8 skill
